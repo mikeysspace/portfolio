@@ -1,4 +1,5 @@
 import { profile } from "../content";
+import { asset } from "../lib/asset.js";
 import Icon from "./Icon.jsx";
 import SocialLinks from "./SocialLinks.jsx";
 
@@ -8,7 +9,7 @@ export default function Hero() {
       {profile.avatar && (
         <img
           className="hero-avatar"
-          src={profile.avatar}
+          src={asset(profile.avatar)}
           alt={profile.name}
           width="96"
           height="96"
@@ -32,7 +33,7 @@ export default function Hero() {
         {profile.resumeUrl && (
           <a
             className="button"
-            href={profile.resumeUrl}
+            href={asset(profile.resumeUrl)}
             target="_blank"
             rel="noreferrer"
           >

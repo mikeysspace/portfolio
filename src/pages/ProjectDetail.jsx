@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { projects, site } from "../content";
+import { asset } from "../lib/asset.js";
 import Icon from "../components/Icon.jsx";
 import NotFound from "./NotFound.jsx";
 
@@ -48,7 +49,11 @@ export default function ProjectDetail() {
           photo that already appears in its own part below, so it only leads the
           page for projects without a walkthrough. */}
       {project.image && !project.stages && (
-        <img className="project-image" src={project.image} alt={project.name} />
+        <img
+          className="project-image"
+          src={asset(project.image)}
+          alt={project.name}
+        />
       )}
 
       <div className="project-body">
@@ -80,7 +85,7 @@ export default function ProjectDetail() {
                   {part.image && (
                     <img
                       className="part-image"
-                      src={part.image}
+                      src={asset(part.image)}
                       alt={part.alt || part.title}
                       loading="lazy"
                     />

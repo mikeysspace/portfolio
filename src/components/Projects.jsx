@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { projects } from "../content";
+import { asset } from "../lib/asset.js";
 import Icon from "./Icon.jsx";
 import Section from "./Section.jsx";
 
@@ -18,7 +19,7 @@ export default function Projects({ id, title }) {
               <Link to={`/projects/${project.slug}`} tabIndex={-1} aria-hidden="true">
                 <img
                   className="card-image"
-                  src={project.image}
+                  src={asset(project.image)}
                   alt={project.name}
                   loading="lazy"
                 />
