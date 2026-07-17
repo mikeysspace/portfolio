@@ -3,8 +3,8 @@
 // ---------------------------------------------------------------------------
 
 export const site = {
-  title: "Alex Doe — Portfolio", // browser tab title
-  description: "Portfolio of Alex Doe — projects, experience, and more.",
+  title: "Isa Mukaramov — Portfolio", // browser tab title
+  description: "Portfolio of Isa Mukaramov — projects, experience, and more.",
 };
 
 // Feature flags. Flip to false to disable a feature everywhere.
@@ -20,8 +20,8 @@ export const sections = [
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
-  { id: "achievements", label: "Achievements" },
+  { id: "achievements", label: "Education" },
   { id: "skills", label: "Skills" },
-  { id: "media", label: "Media" },
+  // { id: "media", label: "Media" }, // hidden: nothing to put here yet
   { id: "contact", label: "Contact" },
 ];

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { projects } from "../content";
 import Icon from "./Icon.jsx";
 import Section from "./Section.jsx";
@@ -12,18 +13,20 @@ export default function Projects({ id, title }) {
     <Section id={id} title={title}>
       <div className="card-grid">
         {sorted.map((project) => (
-          <article className="card" key={project.name}>
+          <article className="card" key={project.slug}>
             {project.image && (
-              <img
-                className="card-image"
-                src={project.image}
-                alt={project.name}
-                loading="lazy"
-              />
+              <Link to={`/projects/${project.slug}`} tabIndex={-1} aria-hidden="true">
+                <img
+                  className="card-image"
+                  src={project.image}
+                  alt={project.name}
+                  loading="lazy"
+                />
+              </Link>
             )}
             <div className="card-body">
               <h3 className="card-title">
-                {project.name}
+                <Link to={`/projects/${project.slug}`}>{project.name}</Link>
                 {project.featured && <span className="badge">Featured</span>}
               </h3>
               <p className="card-text">{project.description}</p>
@@ -37,6 +40,10 @@ export default function Projects({ id, title }) {
                 </ul>
               )}
               <div className="card-links">
+                <Link className="card-cta" to={`/projects/${project.slug}`}>
+                  View project
+                  <Icon name="arrow-right" size={15} />
+                </Link>
                 {project.links?.demo && (
                   <a href={project.links.demo} target="_blank" rel="noreferrer">
                     <Icon name="external" size={15} />

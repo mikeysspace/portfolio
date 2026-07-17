@@ -4,19 +4,45 @@
 
 export const skills = [
   {
-    category: "Languages",
-    items: ["TypeScript", "Python", "Go", "SQL"],
+    category: "Programming",
+    items: ["Python", "TypeScript", "JavaScript", "MATLAB"],
   },
   {
-    category: "Frontend",
-    items: ["React", "Next.js", "CSS", "Accessibility"],
+    category: "Engineering Methods",
+    items: [
+      "Requirements decomposition",
+      "System modelling",
+      "Iterative development",
+      "Testing and validation",
+      "Root-cause analysis",
+      "Technical documentation",
+    ],
   },
   {
-    category: "Backend & Infra",
-    items: ["Node.js", "PostgreSQL", "Redis", "Docker", "AWS", "CI/CD"],
+    category: "Engineering & Design Tools",
+    items: [
+      "SolidWorks",
+      "CET Material Handling",
+      "3D scanning",
+      "Mesh processing",
+      "FDM prototyping",
+      "FEA interpretation",
+    ],
   },
   {
-    category: "Practices",
-    items: ["System design", "Testing", "Mentoring", "Technical writing"],
+    category: "Commercial & Delivery",
+    items: [
+      "Stakeholder communication",
+      "Customer requirements",
+      "Quotations",
+      "Production coordination",
+      "Materials lists",
+      "Incoterms",
+      "WHS",
+    ],
+  },
+  {
+    category: "Office & Documentation",
+    items: ["Excel", "PowerPoint", "Word"],
   },
 ];

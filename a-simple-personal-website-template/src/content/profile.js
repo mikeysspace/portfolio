@@ -3,12 +3,12 @@
 // ---------------------------------------------------------------------------
 
 export const profile = {
-  name: "Alex Doe",
-  role: "Software Engineer",
+  name: "Isa Mukaramov",
+  role: "Mechanical Engineer → Software Engineer",
   tagline:
-    "I design and build reliable, human-friendly software — from data pipelines to polished web apps.",
-  location: "London, UK",
-  email: "hello@example.com",
+    "I turn ambiguous requirements into structured, tested and practical solutions — with an engineering mindset applied to software.",
+  location: "Sydney, NSW",
+  email: "isa.mukaramov2000@gmail.com",
 
   // Optional. Put files in /public and reference them by absolute path,
   // e.g. avatar: "/avatar.jpg", resumeUrl: "/resume.pdf". Empty string hides them.
@@ -17,8 +17,8 @@ export const profile = {
 
   // Paragraphs for the About section. Add or remove freely.
   about: [
-    "I'm a software engineer with a focus on building products end to end — from sketching the first prototype to running it in production. I care about simple architectures, fast feedback loops, and interfaces that get out of the user's way.",
-    "Outside of work you'll find me contributing to open source, writing about engineering practice, and experimenting with whatever technology looks most fun that month.",
+    "I'm a Mechanical Engineering graduate transitioning into software engineering. My background is in converting ambiguous customer requirements into structured, tested and practical technical solutions — work that turns out to translate directly to building software.",
+    "I bring a systems-oriented approach to problem solving: decomposing requirements, developing iteratively, analysing failures, validating against data, and documenting decisions so the reasoning behind them survives. I'm currently building applications in Python and TypeScript.",
   ],
 
   // Shown in the Contact section above the email button.
@@ -27,9 +27,9 @@ export const profile = {
 
   // Social links. `icon` is one of: github, linkedin, x, mail, globe
   // (see src/components/Icon.jsx — add your own there if needed).
+  // TODO: add your GitHub / LinkedIn URLs here — your resume had "[ADD LINK]"
+  // as a placeholder, so I left these out rather than guess.
   socials: [
-    { label: "GitHub", url: "https://github.com/yourhandle", icon: "github" },
-    { label: "LinkedIn", url: "https://linkedin.com/in/yourhandle", icon: "linkedin" },
-    { label: "X", url: "https://x.com/yourhandle", icon: "x" },
+    { label: "Email", url: "mailto:isa.mukaramov2000@gmail.com", icon: "mail" },
   ],
 };

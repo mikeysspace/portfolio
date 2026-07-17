@@ -1,41 +1,255 @@
 // ---------------------------------------------------------------------------
 // Projects. `featured: true` sorts a project to the front and adds a badge.
+//
+// `slug` is the project's URL: /projects/<slug>. It must be unique, and
+// changing it changes the link, so keep it stable once shared.
+// `description` is the short blurb on the card. Everything below it only
+// appears on the project's own page:
+//
+//   `output`     — the headline result, shown in a callout at the top.
+//   `stages`     — the walkthrough. Each stage has a title and `parts`;
+//                  each part may carry `bullets` and an `image`.
+//   `takeaways`  — closing "what this demonstrates" cards.
+//   `highlights` — simple bullet list, used when there are no `stages`.
+//
 // `links` entries are optional — omit any you don't have.
 // `image` is optional: put the file in /public and use e.g. "/project.png".
 // ---------------------------------------------------------------------------
 
 export const projects = [
   {
-    name: "Signal Deck",
+    name: "Handlebar Mount",
+    slug: "handlebar-mount",
+    subtitle:
+      "Requirements · Reverse Engineering · CAD Modelling · FDM Prototyping · FEA + Testing",
     description:
-      "A real-time dashboard for monitoring distributed systems, with anomaly detection and alerting built in. Handles 10k metrics/sec on a single node.",
-    tags: ["React", "WebSockets", "Go", "TimescaleDB"],
-    links: {
-      demo: "https://example.com",
-      source: "https://github.com/yourhandle/signal-deck",
-    },
-    image: "",
+      "A customer-led redesign of a hinged handlebar mount that dipped under load — converged over 10 iterations to a part that survives a 400 N crash case.",
+    detail:
+      "The customer had faced constant issues with hinged mounts dipping under load. The brief was a mount rigid enough not to dip while carrying a GoPro and Garmin computer, and strong enough to survive a worst-case crash. The whole process started from the user's problem, the expected loads and real fitment limits — rather than modelling the part in isolation.",
+
+    output:
+      "Handlebar mount redesigned to eliminate dipping under load. Design case: 0.35 kg payload (GoPro + Garmin) at 40 km/h impact → 400 N. Result: no fracture at 400 N; SF 1.14 (PA6-CF). Converged over 10 iterations.",
+
+    stages: [
+      {
+        title: "Concept development and initial fitment",
+        parts: [
+          {
+            label: "Part 1",
+            title: "Establishing requirements",
+            body: "The customer had faced constant issues with dipping mounts due to them being hinged. I designed a mount to sustain a maximal load of 40 kg as a worst-case crash scenario, and to be rigid enough not to dip under normal operation while carrying a GoPro and Garmin computer.",
+            image: "/projects/handlebar-mount/part-1-establishing-requirements.webp",
+            alt: "The original hinged mount fitted to the handlebar, showing the dipping problem.",
+          },
+          {
+            label: "Part 2",
+            title: "Designing from the existing mounting surface",
+            body: "Reverse engineered the existing mounting interface using reference photos, then modelled the replacement geometry around the known mounting surface.",
+            image: "/projects/handlebar-mount/part-2-existing-mounting-surface.webp",
+            alt: "Reference photo of the existing mounting interface alongside the CAD model of the replacement geometry.",
+          },
+          {
+            label: "Part 3",
+            title: "FDM printing and test fitting",
+            body: "FDM printed the first prototype and test fitted it on the handlebar to check clearance, alignment, interface position and basic usability.",
+            image: "/projects/handlebar-mount/part-3-fdm-printing-test-fitting.webp",
+            alt: "The first FDM-printed prototype held in hand, and test fitted to the handlebar.",
+          },
+        ],
+      },
+      {
+        title: "Testing, reinforcement and final design",
+        parts: [
+          {
+            label: "Part 4",
+            title: "Prototype variations, load testing and FEA",
+            body: "10 designs with 5 iterations each. The test rig was deliberately simple: pieces were clamped to a post with a luggage scale pulling on the lip of the mount until it either broke or reached 40 kg.",
+            image: "/projects/handlebar-mount/part-4-prototypes-load-testing-fea.webp",
+            alt: "Printed prototype variations, the clamp-and-luggage-scale test rig, and a von-Mises FEA stress plot peaking at 92.45 MPa.",
+          },
+          {
+            label: "Part 5",
+            title: "Hybrid material reinforcement",
+            body: "A reinforced mount was made using a steel washer at the failing section, but it ran into layer adhesion problems under test. Regional stiffness increased significantly — until sudden delamination.",
+            image: "/projects/handlebar-mount/part-5-hybrid-material-reinforcement.webp",
+            alt: "The washer-reinforced mount held in hand, showing the delaminated failure section.",
+          },
+          {
+            label: "Part 6",
+            title: "Final material selection and design",
+            body: "UV-treated nylon was chosen for its mechanical properties compared to ASA, PLA and TPU:",
+            bullets: [
+              "Twice as stiff as PLA and ASA",
+              "50% greater yield strength than PLA, and double that of ASA",
+              "Double the layer strength of ASA and PLA",
+              "Survived 40 kg of repeated load without breakage",
+            ],
+            image: "/projects/handlebar-mount/part-6-final-material-selection.webp",
+            alt: "The final UV-treated nylon mount, printed and assembled with the Garmin quarter-turn interface.",
+          },
+        ],
+      },
+    ],
+
+    takeaways: [
+      {
+        title: "Iteration and testing",
+        body: "Focused on real-world testing rather than FEA alone: the part is non-uniform, while FEA models assume uniform material. Loads were applied perpendicular to print orientation rather than parallel, since the shear strength required in parallel is lower than perpendicular.",
+      },
+      {
+        title: "Reinforced failure points",
+        body: "The washer trial was a valuable negative result — it showed that surface preparation alone cannot overcome the adhesion mismatch between FDM material and steel.",
+      },
+      {
+        title: "Customer-led constraints",
+        body: "The design was driven by the existing mount geometry so the printed part matched the available fixing points and sat correctly on the handlebar, with FDM prototyping allowing early checks on shape, clearance and usability before committing to a final material.",
+      },
+    ],
+
+    tags: [
+      "Requirements",
+      "Reverse Engineering",
+      "CAD Modelling",
+      "FDM Prototyping",
+      "FEA + Testing",
+    ],
+    links: {},
+    image: "/projects/handlebar-mount/part-6-final-material-selection.webp",
     featured: true,
   },
   {
-    name: "Papertrail",
+    name: "Intake Piping System",
+    slug: "intake-piping-system",
+    subtitle:
+      "3D Scanning · Mesh Processing · CAD Modelling · FDM Printing · Fitment Validation",
     description:
-      "An open-source CLI that turns messy research notes into a searchable, linked knowledge base. 1.2k stars on GitHub.",
-    tags: ["Rust", "SQLite", "CLI"],
-    links: {
-      source: "https://github.com/yourhandle/papertrail",
-    },
-    image: "",
-    featured: false,
+      "Custom intake piping reverse-engineered from a 3D scan of the engine bay, fitted first time with a verified 15 mm minimum clearance and no interference.",
+    detail:
+      "The factory intake was incompatible with generic cone filters, and replacements were back-ordered from Europe. Rather than working from assumed measurements, the design started by capturing the engine bay as 3D scan data — so real packaging constraints were embedded in the model from the first sketch, and clearances were designed in rather than hoped for.",
+
+    output:
+      "Custom piping accepting a 76 mm cone filter — the largest filter OD that clears the bonnet and factory airbox while retaining factory air routing within the scanned envelope. Mates to the factory oval outlet (105 × 63 mm OD) with a minimum 15 mm clearance to the engine cover. FDM sections are acetone solvent-welded and RTV-sealed at the joints. Final part in ABS for underbonnet heat and chemical resistance.",
+
+    stages: [
+      {
+        title: "Scanning, mesh processing and CAD design",
+        parts: [
+          {
+            label: "Part 1",
+            title: "Scanning the area",
+            body: "Scanned the engine bay to capture packaging space, clearances and surrounding components. Physical measurements were taken alongside the scan to verify geometrical accuracy and ensure the captured data reflected real dimensions before progressing to mesh processing.",
+            image: "/projects/intake-piping-system/part-1-scanning-the-area.webp",
+            alt: "3D scanning the engine bay, with the capture software running on a laptop over the open bonnet.",
+          },
+          {
+            label: "Part 2",
+            title: "Processing the mesh",
+            body: "Multiple scans were completed and the cleanest result — free of artefacts, with clear geometry and undisrupted surfaces — was selected. The mesh was then processed by progressively removing areas irrelevant to the required geometry until only the needed sections remained. Resolution was refined to a workable file size before being imported into SolidWorks as the design reference.",
+            image: "/projects/intake-piping-system/part-2-processing-the-mesh.webp",
+            alt: "The raw engine-bay scan mesh, before irrelevant geometry was trimmed away.",
+          },
+          {
+            label: "Part 3",
+            title: "Designing the inlet pipe",
+            body: "Modelled the inlet pipe directly around the 3D scan geometry to ensure clear routing without potential interference with surrounding components. Clearances were built in from the start rather than assumed, which was confirmed during later test fitting.",
+            image:
+              "/projects/intake-piping-system/part-3-designing-the-inlet-pipe.webp",
+            alt: "The CAD inlet pipe modelled directly against the trimmed engine-bay scan mesh.",
+          },
+        ],
+      },
+      {
+        title: "Prototyping, fitment and outcome",
+        parts: [
+          {
+            label: "Part 4",
+            title: "Printing the connector and test fitting",
+            body: "Critical interface printed and fit-checked first: the connector receives the factory male outlet — an oval section, 105 × 63 mm OD — reverse-engineered from the scan with a slip-fit allowance for acetone bonding. Resolving the most constrained geometry early de-risked the remaining sections.",
+            image:
+              "/projects/intake-piping-system/part-4-connector-test-fitting.webp",
+            alt: "The printed connector held against the factory oval outlet to check the slip fit.",
+          },
+          {
+            label: "Part 5",
+            title: "Printing the remaining piping",
+            body: "With the interface confirmed, the remaining sections were printed, dry-assembled, then joined by acetone solvent-welding into a single body, with the slip joints sealed using RTV silicone. Staged printing kept each section manageable and editable without reprinting the full assembly.",
+            image:
+              "/projects/intake-piping-system/part-5-printing-remaining-piping.webp",
+            alt: "The dry-assembled pipe sections held together before solvent welding.",
+          },
+          {
+            label: "Part 6",
+            title: "Test fitting on the vehicle",
+            body: "Installed on the vehicle with a minimum 15 mm clearance to the engine cover — verified with a 15 mm flexible shaft at the tightest point — and no interference, validating the scan-referenced design. The packaging-driven 10% convergence uses a smooth transition to limit pressure loss; a back-to-back pressure test against the OEM pipe is the next step.",
+            image:
+              "/projects/intake-piping-system/part-6-test-fitting-on-vehicle.webp",
+            alt: "The finished intake pipe installed in the engine bay, clearing the engine cover.",
+          },
+        ],
+      },
+    ],
+
+    takeaways: [
+      {
+        title: "Scan quality selection",
+        body: "Multiple captures were taken and the cleanest scan chosen to ensure the downstream mesh and CAD work was based on accurate, reliable geometry from the start.",
+      },
+      {
+        title: "Scan-referenced geometry",
+        body: "Modelling directly around the scan embedded real packaging constraints into the design, eliminating assumptions about clearances and reducing the risk of interference during fitment.",
+      },
+      {
+        title: "Connector-first workflow",
+        body: "Printing and validating the most constrained interface first reduced rework risk and created a manageable, staged workflow for the remaining pipe sections.",
+      },
+      {
+        title: "Fitment validated by scan",
+        body: "A minimum 15 mm clearance to the engine cover and no interference at first fit — designing directly around the scan produced an installation-ready part without iteration.",
+      },
+      {
+        title: "Airflow — loss control",
+        body: "The 10% area convergence is a packaging constraint, not a performance feature; a smooth converging transition limits the resulting loss. Its effect against the OEM pipe will be quantified by a back-to-back turbo-inlet pressure test (pending).",
+      },
+      {
+        title: "Next steps and material selection",
+        body: "Final part in ABS: a glass-transition temperature near 100°C suits the underbonnet environment (versus nylon's ~70°C), and acetone solvent-welding gives strong, sealed joints between the FDM sections. ASA offers better UV and heat-soak resistance but bonds less readily with acetone — if chosen, joint strength must be re-validated.",
+      },
+    ],
+
+    tags: [
+      "3D Scanning",
+      "Mesh Processing",
+      "CAD Modelling",
+      "FDM Printing",
+      "Fitment Validation",
+    ],
+    links: {},
+    image: "/projects/intake-piping-system/part-6-test-fitting-on-vehicle.webp",
+    featured: true,
   },
   {
-    name: "Wander",
+    name: "Dolphin Torch Housing Redesign",
+    slug: "dolphin-torch-housing-redesign",
+    subtitle:
+      "Reverse Engineering, Interface Definition and Technical Documentation",
     description:
-      "A mobile-first trip planner that builds day-by-day itineraries from a list of places, optimising walking routes between stops.",
-    tags: ["React Native", "Maps API", "Node.js"],
-    links: {
-      demo: "https://example.com",
-    },
+      "A reverse-engineered and redesigned mechanical housing, documented with drawings and tolerances to support repeatable manufacturing.",
+    detail:
+      "This project worked backwards from an existing assembly to recover the intent behind it — how the parts interface, what the dimensional relationships are, and which requirements the original design was satisfying. The redesign was then documented to a standard that someone else could actually manufacture from.",
+    highlights: [
+      "Reverse engineered an existing mechanical assembly to understand its components, interfaces, dimensional relationships and functional requirements.",
+      "Reconstructed and redesigned the housing in SolidWorks, focusing on component alignment, fit, assembly behaviour and functional accuracy.",
+      "Produced technical drawings with defined dimensions and tolerances to communicate implementation requirements clearly and support repeatable manufacturing.",
+      "Applied tolerance standards across interacting parts to manage variation and reduce the risk of assembly or fitment failure.",
+    ],
+    tags: [
+      "Reverse Engineering",
+      "Interface Definition",
+      "Technical Documentation",
+      "SolidWorks",
+      "GD&T",
+    ],
+    links: {},
     image: "",
     featured: false,
   },

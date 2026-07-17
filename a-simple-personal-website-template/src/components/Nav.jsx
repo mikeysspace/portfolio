@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { features, profile, sections } from "../content";
 import { useTheme } from "../hooks/useTheme.js";
 import Icon from "./Icon.jsx";
@@ -8,14 +9,17 @@ export default function Nav() {
   return (
     <header className="nav">
       <div className="nav-inner">
-        <a className="nav-brand" href="#top">
+        <Link className="nav-brand" to="/">
           {profile.name}
-        </a>
+        </Link>
         <nav className="nav-links" aria-label="Sections">
+          {/* Section links are absolute ("/#about") so they still work from a
+              project page, where a bare "#about" would resolve against the
+              project's URL and scroll nowhere. */}
           {sections.map(({ id, label }) => (
-            <a key={id} href={`#${id}`}>
+            <Link key={id} to={`/#${id}`}>
               {label}
-            </a>
+            </Link>
           ))}
         </nav>
         {features.themeToggle && (

@@ -1,28 +1,33 @@
 import { useEffect } from "react";
-import { site, sections } from "./content";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { site } from "./content";
 import Nav from "./components/Nav.jsx";
-import Hero from "./components/Hero.jsx";
-import About from "./components/About.jsx";
-import Experience from "./components/Experience.jsx";
-import Projects from "./components/Projects.jsx";
-import Achievements from "./components/Achievements.jsx";
-import Skills from "./components/Skills.jsx";
-import Media from "./components/Media.jsx";
-import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
+import Home from "./pages/Home.jsx";
+import ProjectDetail from "./pages/ProjectDetail.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
-// Section registry: maps a section id (see src/content/config.js) to the
-// component that renders it. To add a new section: create a component,
-// register it here, then add an entry to `sections` in the config.
-const REGISTRY = {
-  about: About,
-  experience: Experience,
-  projects: Projects,
-  achievements: Achievements,
-  skills: Skills,
-  media: Media,
-  contact: Contact,
-};
+// Navigating to a new page should start at the top, but a link carrying a
+// hash (e.g. "/#projects") should land on that section instead. Without this,
+// React Router preserves the previous scroll position on every navigation.
+function ScrollManager() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      // The target section may mount in the same tick as this effect, so
+      // defer the lookup by a frame to make sure it's in the DOM.
+      const id = hash.slice(1);
+      requestAnimationFrame(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      });
+      return;
+    }
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
+
+  return null;
+}
 
 export default function App() {
   useEffect(() => {
@@ -37,15 +42,14 @@ export default function App() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
+      <ScrollManager />
       <Nav />
       <main id="main">
-        <Hero />
-        {sections.map(({ id, label }) => {
-          const SectionComponent = REGISTRY[id];
-          return SectionComponent ? (
-            <SectionComponent key={id} id={id} title={label} />
-          ) : null;
-        })}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects/:slug" element={<ProjectDetail />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </main>
       <Footer />
     </>

@@ -78,6 +78,18 @@ const ICONS = {
     </>
   ),
   moon: stroked(<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />),
+  "arrow-left": stroked(
+    <>
+      <line x1="19" y1="12" x2="5" y2="12" />
+      <polyline points="12 19 5 12 12 5" />
+    </>
+  ),
+  "arrow-right": stroked(
+    <>
+      <line x1="5" y1="12" x2="19" y2="12" />
+      <polyline points="12 5 19 12 12 19" />
+    </>
+  ),
 };
 
 export default function Icon({ name, size = 20 }) {

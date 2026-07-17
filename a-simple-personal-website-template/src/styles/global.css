@@ -414,6 +414,202 @@ main {
   font-weight: 600;
 }
 
+.card-cta {
+  margin-right: auto;
+}
+
+/* ---- Project detail page ------------------------------------------------- */
+
+.project-page {
+  padding-top: 3rem;
+  max-width: 46rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.project-header {
+  display: grid;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.project-title {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.project-subtitle {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.project-image {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+}
+
+.project-body {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.project-lede {
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.project-detail {
+  color: var(--text-muted);
+}
+
+.project-section-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+.project-highlights {
+  margin-top: 0.75rem;
+}
+
+/* Headline result callout */
+.project-output {
+  padding: 1.1rem 1.25rem;
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+}
+
+.project-output-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+  margin-bottom: 0.4rem;
+}
+
+.project-output p {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+/* Staged walkthrough */
+.project-stage {
+  margin-top: 1.25rem;
+}
+
+.part-list {
+  display: grid;
+  gap: 1.75rem;
+  counter-reset: none;
+}
+
+.part {
+  display: grid;
+  gap: 0.6rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--border);
+}
+
+.part-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.part-label {
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.part-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.part-body {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.part-image {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.part .highlights {
+  margin-bottom: 0;
+}
+
+/* Closing takeaway cards */
+.project-takeaways {
+  margin-top: 1.25rem;
+}
+
+.takeaway-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1rem;
+}
+
+.takeaway {
+  padding: 1.1rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.takeaway-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.takeaway-body {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ---- 404 ------------------------------------------------------------------ */
+
+.notfound {
+  padding-top: clamp(4rem, 15vh, 8rem);
+  display: grid;
+  justify-items: start;
+  gap: 0.85rem;
+}
+
 .media-meta {
   display: flex;
   align-items: center;
