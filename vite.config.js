@@ -34,7 +34,9 @@ function spa404Fallback() {
   };
 }
 
-export default defineConfig(({ command }) => ({
-  base: command === "build" ? PROD_BASE : "/",
+export default defineConfig(({ command, isPreview }) => ({
+  // `build` and `preview` get the production prefix so `npm run preview` mirrors
+  // the deployed site; the dev server (serve, not preview) stays at "/".
+  base: command === "build" || isPreview ? PROD_BASE : "/",
   plugins: [react(), spa404Fallback()],
 }));

@@ -353,6 +353,81 @@ main {
   color: var(--accent);
 }
 
+/* ---- Projects carousel --------------------------------------------------- */
+
+.projects-carousel {
+  --visible: 3; /* cards shown at once; JS relies on CSS for this */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .projects-carousel {
+    --visible: 2;
+  }
+}
+
+@media (max-width: 620px) {
+  .projects-carousel {
+    --visible: 1;
+  }
+}
+
+.carousel-viewport {
+  flex: 1 1 auto;
+  min-width: 0; /* let the flex item shrink so overflow can clip */
+  overflow: hidden;
+  padding: 8px 0; /* room for the card hover lift and shadow */
+}
+
+.carousel-track {
+  display: flex;
+  /* transform + transition are set inline by the component */
+}
+
+.carousel-slot {
+  flex: 0 0 calc(100% / var(--visible));
+  display: flex;
+  padding: 0 0.625rem; /* gutter lives inside the slot to keep slide math exact */
+}
+
+.carousel-slot .card {
+  width: 100%; /* fill the slot so cards in a row match height */
+}
+
+.carousel-arrow {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.carousel-arrow:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: scale(1.05);
+}
+
+/* Few enough projects that there's nothing to rotate: lay them out plainly. */
+.projects-carousel.is-static .carousel-track {
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.projects-carousel.is-static .carousel-slot {
+  flex-basis: auto;
+  padding: 0;
+}
+
 /* ---- Cards (projects & media) -------------------------------------------- */
 
 .card-grid {
