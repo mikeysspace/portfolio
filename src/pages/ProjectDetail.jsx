@@ -132,6 +132,24 @@ export default function ProjectDetail() {
           </section>
         )}
 
+        {/* A standalone documentary figure (e.g. an exploded assembly drawing),
+            for projects that carry one alongside the write-up. */}
+        {project.figure && (
+          <figure className="project-figure">
+            <img
+              className="project-figure-img"
+              src={asset(project.figure.src)}
+              alt={project.figure.alt || project.name}
+              loading="lazy"
+            />
+            {project.figure.caption && (
+              <figcaption className="project-figure-caption">
+                {project.figure.caption}
+              </figcaption>
+            )}
+          </figure>
+        )}
+
         {project.takeaways?.length > 0 && (
           <section className="project-takeaways">
             <h2 className="project-section-title">What this demonstrates</h2>

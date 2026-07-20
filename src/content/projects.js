@@ -337,6 +337,12 @@ export const projects = [
     ],
     links: {},
     model: { src: "/models/dolphin-torch.stl", upAxis: "z" },
+    figure: {
+      src: "/projects/dolphin-torch/exploded-assembly-drawing.webp",
+      caption:
+        "Top-level exploded assembly drawing (A3, third-angle projection) with the bill of materials: DT_1 main body sub-assembly, DT_2 bulb holder and contacts, DT_3 lid, and the 6 V lantern battery.",
+      alt: "Rendered exploded assembly drawing of the Dolphin torch with a titled bill of materials listing DT_1 main body, DT_2, DT_3 lid and a 6 V torch battery, in third-angle projection.",
+    },
     attachments: [
       {
         label: "Full drawing package",

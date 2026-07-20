@@ -586,6 +586,25 @@ main {
   margin-bottom: 2rem;
 }
 
+/* A documentary figure in the write-up (e.g. an exploded assembly drawing). */
+.project-figure {
+  margin: 1.75rem 0 0;
+}
+
+.project-figure-img {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff; /* engineering sheets are drawn on white */
+}
+
+.project-figure-caption {
+  margin-top: 0.6rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
 /* ---- STL 3D viewer ------------------------------------------------------- */
 
 .stl-viewer {
