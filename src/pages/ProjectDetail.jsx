@@ -1,9 +1,13 @@
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { projects, site } from "../content";
 import { asset } from "../lib/asset.js";
 import Icon from "../components/Icon.jsx";
 import NotFound from "./NotFound.jsx";
+
+// three.js is ~600 KB, so the viewer (and three) load only when a project that
+// has a model is opened — never on the home page or a software project.
+const StlViewer = lazy(() => import("../components/StlViewer.jsx"));
 
 export default function ProjectDetail() {
   const { slug } = useParams();
@@ -45,10 +49,23 @@ export default function ProjectDetail() {
         )}
       </header>
 
+      {/* CAD projects lead with an interactive 3D model instead of a still. */}
+      {project.model && (
+        <Suspense
+          fallback={<div className="stl-viewer stl-viewer--pending" />}
+        >
+          <StlViewer
+            src={project.model.src}
+            upAxis={project.model.upAxis}
+            alt={`3D model of ${project.name}`}
+          />
+        </Suspense>
+      )}
+
       {/* `image` is the card thumbnail. On a staged write-up it would repeat a
           photo that already appears in its own part below, so it only leads the
-          page for projects without a walkthrough. */}
-      {project.image && !project.stages && (
+          page for projects without a walkthrough or a 3D model. */}
+      {project.image && !project.stages && !project.model && (
         <img
           className="project-image"
           src={asset(project.image)}
