@@ -5,14 +5,15 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { asset } from "../lib/asset.js";
 
 // A self-contained STL turntable. The part is centred and framed, then spun
-// about a chosen axis (default Z — the normal to the CAD top plane) so it reads
-// like a model on a turntable. Users can also drag to orbit and scroll to zoom.
+// about a chosen axis (default Y — the vertical axis SolidWorks parts are
+// modelled against) so it reads like a model on a turntable. Users can also
+// drag to orbit and scroll to zoom.
 //
 // three.js is heavy, so this component is imported lazily by ProjectDetail;
 // Vite splits it (and three) into a chunk that only loads on a CAD project page.
 const UP = { x: [1, 0, 0], y: [0, 1, 0], z: [0, 0, 1] };
 
-export default function StlViewer({ src, upAxis = "z", alt }) {
+export default function StlViewer({ src, upAxis = "y", alt }) {
   const mountRef = useRef(null);
   const [status, setStatus] = useState("loading"); // loading | ready | error
 
