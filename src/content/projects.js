@@ -24,7 +24,7 @@ export const projects = [
     description:
       "A full-stack analytics platform for visualising and interpreting test rig data from client projects, turning an hour of manual analysis into a single click.",
     detail:
-      "While working with test rig data from client projects, I needed a way to interpret my results at a larger scale, so I built the analytics system myself. That pulled me into a new domain, software engineering, where I picked up system design and hosting along the way. The result is a FastAPI backend with a React frontend, hosted on Render.",
+      "While working with test rig data from client projects, I needed a way to interpret my results at a larger scale, so I built the analytics system myself. That pulled me into a new domain, software engineering, where I picked up system design and hosting. The result is a FastAPI backend with a React frontend, hosted on Render.",
 
     output:
       "A working, hosted analytics platform you can use today. What used to take me an hour of manual analysis now takes a single click.",
@@ -189,7 +189,7 @@ export const projects = [
     description:
       "Custom intake piping reverse-engineered from a 3D scan of the engine bay, fitted first time with a verified 15 mm minimum clearance and no interference.",
     detail:
-      "The factory intake was incompatible with generic cone filters, and replacements were back-ordered from Europe. Rather than working from assumed measurements, the design started by capturing the engine bay as 3D scan data, so real packaging constraints were embedded in the model from the first sketch, and clearances were designed in rather than hoped for.",
+      "The factory intake was incompatible with generic cone filters, and replacements were back-ordered from Europe. Instead of working from assumed measurements, I captured the engine bay as 3D scan data first. That put real packaging constraints into the model from the first sketch, so I designed the clearances in from the start rather than assuming them.",
 
     output:
       "Custom piping accepting a 76 mm cone filter, the largest filter OD that clears the bonnet and factory airbox while retaining factory air routing within the scanned envelope. Mates to the factory oval outlet (105 × 63 mm OD) with a minimum 15 mm clearance to the engine cover. FDM sections are acetone solvent-welded and RTV-sealed at the joints. Final part in ABS for underbonnet heat and chemical resistance.",

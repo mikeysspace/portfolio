@@ -17,13 +17,13 @@ export const profile = {
 
   // Paragraphs for the About section. Add or remove freely.
   about: [
-    "I'm a Mechanical Engineering graduate transitioning into software engineering. My background is in converting ambiguous customer requirements into structured, tested and practical technical solutions, work that turns out to translate directly to building software.",
-    "I bring a systems-oriented approach to problem solving: decomposing requirements, developing iteratively, analysing failures, validating against data, and documenting decisions so the reasoning behind them survives. I'm currently building applications in Python and TypeScript.",
+    "I'm a Mechanical Engineering graduate transitioning into software engineering. My background is in converting ambiguous customer requirements into structured, tested and practical technical solutions, work that translates directly to building software.",
+    "I bring a systems-oriented approach to problem solving: decomposing requirements, developing iteratively, analysing failures, validating against data and documenting the reasoning behind each decision. I'm currently building applications in Python and TypeScript.",
   ],
 
   // Shown in the Contact section above the email button.
   contactBlurb:
-    "I'm always happy to talk about interesting projects, opportunities, or just to say hi. The fastest way to reach me is email.",
+    "I'm happy to talk about interesting projects, opportunities, or just to say hi. The fastest way to reach me is email.",
 
   // Social links. `icon` is one of: github, linkedin, x, mail, globe
   // (see src/components/Icon.jsx — add your own there if needed).

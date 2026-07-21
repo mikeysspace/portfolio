@@ -41,7 +41,7 @@ A section also hides itself automatically if its data file is empty.
 
 ### 3. Theme — edit `src/styles/theme.css`
 
-Every design token (colors, fonts, spacing, corner radius, shadows) is a CSS variable in one file, with a light and a dark palette. Change the accent color, swap the font stack, or go full brutalist — no component styles need to change. Layout/structural CSS lives in `src/styles/global.css`.
+Every design token (colours, fonts, spacing, corner radius, shadows) is a CSS variable in one file, with a light and a dark palette. Change the accent colour, swap the font stack, or go full brutalist — no component styles need to change. Layout/structural CSS lives in `src/styles/global.css`.
 
 Light/dark mode follows the visitor's OS preference, is toggleable from the nav, and persists in `localStorage`. Disable the toggle via `features.themeToggle` in `config.js`.
 
