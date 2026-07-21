@@ -3,8 +3,8 @@
 // ---------------------------------------------------------------------------
 
 export const site = {
-  title: "Isa Mukaramov — Portfolio", // browser tab title
-  description: "Portfolio of Isa Mukaramov — projects, experience, and more.",
+  title: "Isa Mukaramov · Portfolio", // browser tab title
+  description: "Portfolio of Isa Mukaramov, projects, experience, and more.",
 };
 
 // Feature flags. Flip to false to disable a feature everywhere.

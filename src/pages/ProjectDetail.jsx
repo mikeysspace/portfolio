@@ -14,7 +14,7 @@ export default function ProjectDetail() {
   const project = projects.find((p) => p.slug === slug);
 
   useEffect(() => {
-    if (project) document.title = `${project.name} — ${site.title}`;
+    if (project) document.title = `${project.name} · ${site.title}`;
     return () => {
       document.title = site.title;
     };

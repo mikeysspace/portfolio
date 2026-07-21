@@ -22,9 +22,9 @@ export const projects = [
     slug: "test-analysis-platform",
     subtitle: "System Design · FastAPI · React · Hosting on Render",
     description:
-      "A full-stack analytics platform for visualising and interpreting test rig data from client projects — turning an hour of manual analysis into a single click.",
+      "A full-stack analytics platform for visualising and interpreting test rig data from client projects, turning an hour of manual analysis into a single click.",
     detail:
-      "While working with test rig data from client projects, I needed a way to interpret my results at a larger scale, so I built the analytics system myself. That pulled me into a new domain — software engineering — where I picked up system design and hosting along the way. The result is a FastAPI backend with a React frontend, hosted on Render.",
+      "While working with test rig data from client projects, I needed a way to interpret my results at a larger scale, so I built the analytics system myself. That pulled me into a new domain, software engineering, where I picked up system design and hosting along the way. The result is a FastAPI backend with a React frontend, hosted on Render.",
 
     output:
       "A working, hosted analytics platform you can use today. What used to take me an hour of manual analysis now takes a single click.",
@@ -36,14 +36,14 @@ export const projects = [
           {
             label: "Step 1",
             title: "Start an analysis",
-            body: "Upload a CSV of prototype load-test results — or load the built-in sample data — and state the minimum load the part has to survive. The platform reads timestamped load and displacement readings for each prototype and takes it from there.",
+            body: "Upload a CSV of prototype load-test results, or load the built-in sample data, and state the minimum load the part has to survive. The platform reads timestamped load and displacement readings for each prototype and takes it from there.",
             image: "/projects/test-analysis-platform/start-page.webp",
             alt: "The landing page: a form to upload test data or use sample data, with a field for the minimum required load set to 400 N.",
           },
           {
             label: "Step 2",
             title: "Read the results",
-            body: "The analysis picks a recommended prototype and explains why. Here V2 (PA6-CF) reached 438 N against the 400 N requirement — a +38 N margin, and the only one of two prototypes to pass. A dataset summary and a comparison table lay out peak load, displacement, safety margin and pass/fail for each iteration.",
+            body: "The analysis picks a recommended prototype and explains why. Here V2 (PA6-CF) reached 438 N against the 400 N requirement, a +38 N margin, and the only one of two prototypes to pass. A dataset summary and a comparison table lay out peak load, displacement, safety margin and pass/fail for each iteration.",
             image: "/projects/test-analysis-platform/results.webp",
             alt: "Results view: a recommended-prototype callout for V2, a dataset summary, and a prototype comparison table showing V1 failing and V2 passing.",
           },
@@ -61,7 +61,7 @@ export const projects = [
     takeaways: [
       {
         title: "Full-stack, self-hosted",
-        body: "A FastAPI backend serving a React frontend, deployed and hosted on Render — built and run end to end rather than handed off.",
+        body: "A FastAPI backend serving a React frontend, deployed and hosted on Render, built and run end to end rather than handed off.",
       },
       {
         title: "Self-taught system design",
@@ -69,7 +69,7 @@ export const projects = [
       },
       {
         title: "From an hour to a click",
-        body: "The platform turns a repetitive, hour-long manual analysis into a single click — and applies a consistent pass/fail rule instead of eyeballing each result.",
+        body: "The platform turns a repetitive, hour-long manual analysis into a single click, and applies a consistent pass/fail rule instead of eyeballing each result.",
       },
     ],
 
@@ -86,9 +86,9 @@ export const projects = [
     subtitle:
       "Requirements · Reverse Engineering · CAD Modelling · FDM Prototyping · FEA + Testing",
     description:
-      "A customer-led redesign of a hinged handlebar mount that dipped under load — converged over 10 iterations to a part that survives a 400 N crash case.",
+      "A customer-led redesign of a hinged handlebar mount that dipped under load, converged over 10 iterations to a part that survives a 400 N crash case.",
     detail:
-      "The customer had faced constant issues with hinged mounts dipping under load. The brief was a mount rigid enough not to dip while carrying a GoPro and Garmin computer, and strong enough to survive a worst-case crash. The whole process started from the user's problem, the expected loads and real fitment limits — rather than modelling the part in isolation.",
+      "The customer had faced constant issues with hinged mounts dipping under load. The brief was a mount rigid enough not to dip while carrying a GoPro and Garmin computer, and strong enough to survive a worst-case crash. The whole process started from the user's problem, the expected loads and real fitment limits, rather than modelling the part in isolation.",
 
     output:
       "Handlebar mount redesigned to eliminate dipping under load. Design case: 0.35 kg payload (GoPro + Garmin) at 40 km/h impact → 400 N. Result: no fracture at 400 N; SF 1.14 (PA6-CF). Converged over 10 iterations.",
@@ -133,7 +133,7 @@ export const projects = [
           {
             label: "Part 5",
             title: "Hybrid material reinforcement",
-            body: "A reinforced mount was made using a steel washer at the failing section, but it ran into layer adhesion problems under test. Regional stiffness increased significantly — until sudden delamination.",
+            body: "A reinforced mount was made using a steel washer at the failing section, but it ran into layer adhesion problems under test. Regional stiffness increased significantly, until sudden delamination.",
             image: "/projects/handlebar-mount/part-5-hybrid-material-reinforcement.webp",
             alt: "The washer-reinforced mount held in hand, showing the delaminated failure section.",
           },
@@ -161,7 +161,7 @@ export const projects = [
       },
       {
         title: "Reinforced failure points",
-        body: "The washer trial was a valuable negative result — it showed that surface preparation alone cannot overcome the adhesion mismatch between FDM material and steel.",
+        body: "The washer trial was a valuable negative result: it showed that surface preparation alone cannot overcome the adhesion mismatch between FDM material and steel.",
       },
       {
         title: "Customer-led constraints",
@@ -189,10 +189,10 @@ export const projects = [
     description:
       "Custom intake piping reverse-engineered from a 3D scan of the engine bay, fitted first time with a verified 15 mm minimum clearance and no interference.",
     detail:
-      "The factory intake was incompatible with generic cone filters, and replacements were back-ordered from Europe. Rather than working from assumed measurements, the design started by capturing the engine bay as 3D scan data — so real packaging constraints were embedded in the model from the first sketch, and clearances were designed in rather than hoped for.",
+      "The factory intake was incompatible with generic cone filters, and replacements were back-ordered from Europe. Rather than working from assumed measurements, the design started by capturing the engine bay as 3D scan data, so real packaging constraints were embedded in the model from the first sketch, and clearances were designed in rather than hoped for.",
 
     output:
-      "Custom piping accepting a 76 mm cone filter — the largest filter OD that clears the bonnet and factory airbox while retaining factory air routing within the scanned envelope. Mates to the factory oval outlet (105 × 63 mm OD) with a minimum 15 mm clearance to the engine cover. FDM sections are acetone solvent-welded and RTV-sealed at the joints. Final part in ABS for underbonnet heat and chemical resistance.",
+      "Custom piping accepting a 76 mm cone filter, the largest filter OD that clears the bonnet and factory airbox while retaining factory air routing within the scanned envelope. Mates to the factory oval outlet (105 × 63 mm OD) with a minimum 15 mm clearance to the engine cover. FDM sections are acetone solvent-welded and RTV-sealed at the joints. Final part in ABS for underbonnet heat and chemical resistance.",
 
     stages: [
       {
@@ -208,7 +208,7 @@ export const projects = [
           {
             label: "Part 2",
             title: "Processing the mesh",
-            body: "Multiple scans were completed and the cleanest result — free of artefacts, with clear geometry and undisrupted surfaces — was selected. The mesh was then processed by progressively removing areas irrelevant to the required geometry until only the needed sections remained. Resolution was refined to a workable file size before being imported into SolidWorks as the design reference.",
+            body: "Multiple scans were completed and the cleanest result, free of artefacts, with clear geometry and undisrupted surfaces, was selected. The mesh was then processed by progressively removing areas irrelevant to the required geometry until only the needed sections remained. Resolution was refined to a workable file size before being imported into SolidWorks as the design reference.",
             image: "/projects/intake-piping-system/part-2-processing-the-mesh.webp",
             alt: "The raw engine-bay scan mesh, before irrelevant geometry was trimmed away.",
           },
@@ -228,7 +228,7 @@ export const projects = [
           {
             label: "Part 4",
             title: "Printing the connector and test fitting",
-            body: "Critical interface printed and fit-checked first: the connector receives the factory male outlet — an oval section, 105 × 63 mm OD — reverse-engineered from the scan with a slip-fit allowance for acetone bonding. Resolving the most constrained geometry early de-risked the remaining sections.",
+            body: "Critical interface printed and fit-checked first: the connector receives the factory male outlet, an oval section, 105 × 63 mm OD, reverse-engineered from the scan with a slip-fit allowance for acetone bonding. Resolving the most constrained geometry early de-risked the remaining sections.",
             image:
               "/projects/intake-piping-system/part-4-connector-test-fitting.webp",
             alt: "The printed connector held against the factory oval outlet to check the slip fit.",
@@ -244,7 +244,7 @@ export const projects = [
           {
             label: "Part 6",
             title: "Test fitting on the vehicle",
-            body: "Installed on the vehicle with a minimum 15 mm clearance to the engine cover — verified with a 15 mm flexible shaft at the tightest point — and no interference, validating the scan-referenced design. The packaging-driven 10% convergence uses a smooth transition to limit pressure loss; a back-to-back pressure test against the OEM pipe is the next step.",
+            body: "Installed on the vehicle with a minimum 15 mm clearance to the engine cover, verified with a 15 mm flexible shaft at the tightest point, and no interference, validating the scan-referenced design. The packaging-driven 10% convergence uses a smooth transition to limit pressure loss; a back-to-back pressure test against the OEM pipe is the next step.",
             image:
               "/projects/intake-piping-system/part-6-test-fitting-on-vehicle.webp",
             alt: "The finished intake pipe installed in the engine bay, clearing the engine cover.",
@@ -268,15 +268,15 @@ export const projects = [
       },
       {
         title: "Fitment validated by scan",
-        body: "A minimum 15 mm clearance to the engine cover and no interference at first fit — designing directly around the scan produced an installation-ready part without iteration.",
+        body: "A minimum 15 mm clearance to the engine cover and no interference at first fit: designing directly around the scan produced an installation-ready part without iteration.",
       },
       {
-        title: "Airflow — loss control",
+        title: "Airflow: loss control",
         body: "The 10% area convergence is a packaging constraint, not a performance feature; a smooth converging transition limits the resulting loss. Its effect against the OEM pipe will be quantified by a back-to-back turbo-inlet pressure test (pending).",
       },
       {
         title: "Next steps and material selection",
-        body: "Final part in ABS: a glass-transition temperature near 100°C suits the underbonnet environment (versus nylon's ~70°C), and acetone solvent-welding gives strong, sealed joints between the FDM sections. ASA offers better UV and heat-soak resistance but bonds less readily with acetone — if chosen, joint strength must be re-validated.",
+        body: "Final part in ABS: a glass-transition temperature near 100°C suits the underbonnet environment (versus nylon's ~70°C), and acetone solvent-welding gives strong, sealed joints between the FDM sections. ASA offers better UV and heat-soak resistance but bonds less readily with acetone. If chosen, joint strength must be re-validated.",
       },
     ],
 
@@ -298,24 +298,24 @@ export const projects = [
     subtitle:
       "Reverse Engineering · SolidWorks · Technical Drawing · Design for Manufacture",
     description:
-      "A complete teardown and redraw of an Eveready Dolphin torch — 16 parts across three sub-assemblies, modelled in SolidWorks and documented to manufacturing standard.",
+      "A complete teardown and redraw of an Eveready Dolphin torch, 16 parts across three sub-assemblies, modelled in SolidWorks and documented to manufacturing standard.",
     detail:
-      "I stripped an Eveready Dolphin torch down to its individual components and rebuilt it in SolidWorks as a full, manufacturable drawing set. Every part was measured, modelled and documented — from the ABS main casing and silicone seals to the sheet-metal battery contacts and the LED optic — with materials, masses, tolerances and section views defined so the whole product could be reproduced from the drawings alone.",
+      "I stripped an Eveready Dolphin torch down to its individual components and rebuilt it in SolidWorks as a full, manufacturable drawing set. Every part was measured, modelled and documented, from the ABS main casing and silicone seals to the sheet-metal battery contacts and the LED optic, with materials, masses, tolerances and section views defined so the whole product could be reproduced from the drawings alone.",
 
     output:
-      "A complete A3 drawing package: a top-level assembly with an exploded bill of materials, three sub-assemblies (main body, battery holder & contacts, and lid), and fully dimensioned detail drawings for all 16 parts — each with its material, mass and tolerances specified, in third-angle projection.",
+      "A complete A3 drawing package: a top-level assembly with an exploded bill of materials, three sub-assemblies (main body, battery holder & contacts, and lid), and fully dimensioned detail drawings for all 16 parts, each with its material, mass and tolerances specified, in third-angle projection.",
 
     highlights: [
       "Reverse engineered a complete Eveready Dolphin torch into 16 parts across three sub-assemblies: main body (DT_1), battery holder and contacts (DT_2), and lid (DT_3).",
       "Produced a structured bill of materials with part numbers and an exploded assembly view showing how every component fits together.",
-      "Assigned real materials and reported per-part mass — an 87 g ABS main casing, silicone-rubber seal and button, a PA6 button stem, alloy-steel and copper battery contacts, and a medium-impact acrylic lens.",
+      "Assigned real materials and reported per-part mass: an 87 g ABS main casing, silicone-rubber seal and button, a PA6 button stem, alloy-steel and copper battery contacts, and a medium-impact acrylic lens.",
       "Documented each part to manufacturing standard: dimensioned views, section and detail callouts, third-angle projection and tolerance blocks.",
     ],
 
     takeaways: [
       {
         title: "Reverse engineering",
-        body: "Recovered the geometry, fits and interfaces of a real, mass-produced product by measurement — then rebuilt it part by part so the model matched how the torch actually goes together.",
+        body: "Recovered the geometry, fits and interfaces of a real, mass-produced product by measurement, then rebuilt it part by part so the model matched how the torch actually goes together.",
       },
       {
         title: "Design for manufacture",

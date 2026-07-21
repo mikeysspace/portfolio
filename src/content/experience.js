@@ -7,7 +7,7 @@
 export const experience = [
   {
     company: "Troax",
-    role: "Junior Mechanical Designer — Internship",
+    role: "Junior Mechanical Designer, Internship",
     start: "Feb 2026",
     end: "Present",
     summary:

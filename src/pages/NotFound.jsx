@@ -7,7 +7,7 @@ export default function NotFound() {
       <p className="hero-kicker">404</p>
       <h1 className="hero-name">Page not found</h1>
       <p className="hero-tagline">
-        That page doesn't exist — it may have moved or the link may be out of
+        That page doesn't exist. It may have moved or the link may be out of
         date.
       </p>
       <Link className="button primary" to="/">

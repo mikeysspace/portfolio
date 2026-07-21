@@ -13,7 +13,7 @@ export default function Experience({ id, title }) {
                 {job.role} · <span className="company">{job.company}</span>
               </h3>
               <span className="timeline-meta">
-                {job.start} — {job.end}
+                {job.start} · {job.end}
                 {job.location ? ` · ${job.location}` : ""}
               </span>
             </div>

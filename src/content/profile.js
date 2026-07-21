@@ -6,7 +6,7 @@ export const profile = {
   name: "Isa Mukaramov",
   role: "Mechanical Engineer → Software Engineer",
   tagline:
-    "I turn ambiguous requirements into structured, tested and practical solutions — with an engineering mindset applied to software.",
+    "I turn ambiguous requirements into structured, tested and practical solutions, with an engineering mindset applied to software.",
   location: "Sydney, NSW",
   email: "isa.mukaramov2000@gmail.com",
 
@@ -17,7 +17,7 @@ export const profile = {
 
   // Paragraphs for the About section. Add or remove freely.
   about: [
-    "I'm a Mechanical Engineering graduate transitioning into software engineering. My background is in converting ambiguous customer requirements into structured, tested and practical technical solutions — work that turns out to translate directly to building software.",
+    "I'm a Mechanical Engineering graduate transitioning into software engineering. My background is in converting ambiguous customer requirements into structured, tested and practical technical solutions, work that turns out to translate directly to building software.",
     "I bring a systems-oriented approach to problem solving: decomposing requirements, developing iteratively, analysing failures, validating against data, and documenting decisions so the reasoning behind them survives. I'm currently building applications in Python and TypeScript.",
   ],
 
